@@ -10,7 +10,7 @@ $(document).ready(function() {
   });
 
 var line = d3.line()
-    .curve(d3.curveCardinal.tension(0));
+    .curve(d3.curveCardinal.tension(1));
 
 var heightContainer = $('#tnd-first-spacer').height();
 var widthContainer = $('#tnd-first-spacer').width();

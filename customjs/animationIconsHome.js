@@ -15,7 +15,7 @@ function pathPrepareReverse ($el) {
 }
 
 
-$('#pc-group path, #grow-group path, .worm-svg path, #idea-group path, #team-first-line path').each(function(index){
+$('#pc-group path, #grow-group path, .worm-svg path, #idea-group path, #team-first-line path, #logo-tandustroke-svg path').each(function(index){
     pathPrepare(this);
 });
 
