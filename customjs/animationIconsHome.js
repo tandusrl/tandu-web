@@ -15,7 +15,7 @@ function pathPrepareReverse ($el) {
 }
 
 
-$('#pc-group path, #grow-group path, .worm-svg path, #idea-group path, #team-first-line path, #logo-tandustroke-svg path').each(function(index){
+$('#pc-group .pc-animate, #growth-leaf, .worm-svg path, #idea-center, #idea-raggi, #team-first-line path, #logo-tandustroke-svg path').each(function(index){
     pathPrepare(this);
 });
 
@@ -27,16 +27,18 @@ $('#team-second-line path').each(function(index){
 var controller = new ScrollMagic.Controller();
 
 // build tween
-var tween = new TimelineMax();
-    tween.add(TweenMax.to($('#idea-group path'), 1, {strokeDashoffset: 0, ease:Linear.easeNone}));
+var tweenCenter = new TimelineMax();
+    tweenCenter.add(TweenMax.to($('#idea-center'), 1, {strokeDashoffset: 0, ease:Linear.easeNone}));
+
+var tweenRaggi = new TimelineMax();
+    tweenRaggi.add(TweenMax.to($('#idea-raggi'), 1, {strokeDashoffset: 0, ease:Linear.easeNone}));
   //tween.add(TweenMax.to('path', 1, {stroke: '#33629c', ease:Linear.easeNone}), 0);  // change color during the whole thing
 
 var tween1 = new TimelineMax();
-    tween1.add(TweenMax.to($('#pc-group path'), 1, {strokeDashoffset: 0, ease:Linear.easeNone}));
+    tween1.add(TweenMax.to($('#pc-group .pc-animate'), 1, {strokeDashoffset: 0, ease:Linear.easeNone}));
 
 var tween2 = new TimelineMax();
-    tween2.add(TweenMax.to($('#grow-group .grow-money'), 1, {strokeDashoffset: 0, ease:Linear.easeNone}));
-    tween2.add(TweenMax.to($('#grow-group .grow-leaf'), 1, {strokeDashoffset: 0, ease:Linear.easeNone}));
+    tween2.add(TweenMax.to($('#growth-leaf'), 1, {strokeDashoffset: 0, ease:Linear.easeNone}));
 
 var tweenWorm = new TimelineMax();
     tweenWorm.add(TweenMax.to($('.worm-svg path'), 1, {strokeDashoffset: 0, ease:Linear.easeNone}));
@@ -50,8 +52,13 @@ var tweenLine2 = new TimelineMax();
 
 
 // build scene
-var scene0 = new ScrollMagic.Scene({triggerElement: '#triggerWorm', duration: 300, tweenChanges: true})
-        .setTween(tween)
+var scene0 = new ScrollMagic.Scene({triggerElement: '#trigger-idea', dusration: 300, tweenChanges: true})
+        .setTween(tweenCenter)
+        //.addIndicators() // add indicators (requires plugin)
+        .addTo(controller);
+
+var scene0a = new ScrollMagic.Scene({triggerElement: '#trigger-idea', duration: 300, tweenChanges: true})
+        .setTween(tweenRaggi)
         //.addIndicators() // add indicators (requires plugin)
         .addTo(controller);
 

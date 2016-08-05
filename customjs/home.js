@@ -45,9 +45,9 @@ $(document).ready(function() {
         $('#tnd-first-spacer').css('position', '');
       }
 
-      if($(window).scrollTop() < offsetTopMin ){
-        $('#home-container-text').css('opacity', 0);
-      }
+      // if($(window).scrollTop() < offsetTopMin ){
+      //   $('#home-container-text').css('opacity', 0);
+      // }
 
     }else{
           if(flagScroll && $(window).scrollTop() > $('.start-animation-write').offset().top){
