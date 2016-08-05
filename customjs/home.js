@@ -8,6 +8,7 @@ $(document).ready(function() {
   $( window ).scroll(function() {
     var offsetTopMin = $('#tnd-first-slide').offset().top + 200;
     var st = $(this).scrollTop();
+
     if($('#tnd-first-slide').offset().top >= $('header').height() ){
       $('#tnd-first-slide').css('position', 'relative');
       $('#tnd-first-slide').css('top', '0px');
@@ -32,7 +33,7 @@ $(document).ready(function() {
     }
     if(st < lastScrollTop){
       //On scroll UP
-      if($(window).scrollTop() < $('#tnd-first-spacer').offset().top){
+      if($(window).scrollTop() < $('#about').offset().top){
         $('.navbar').css('right', '-417px');
         if($('.burger__line-top').hasClass('activeLine1')){
           setTimeout(function(){
@@ -68,7 +69,7 @@ $(document).ready(function() {
 
 
   var showHideNavbar = function(){
-       if(window.innerWidth > 400 && $(window).scrollTop() < $('#tnd-first-spacer').offset().top){
+       if(window.innerWidth > 400 && $(window).scrollTop() < $('#about').offset().top){
           $('.burger').css('top', '-90px');
         }else{
           $('.burger').css('top', '0');
