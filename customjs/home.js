@@ -77,7 +77,7 @@ $(document).ready(function() {
   };
 
   $('#carousel-team').carousel({
-    interval: 3000
+    interval: 99999
   });
 
   $('#carousel-team').on('slide.bs.carousel', function () {
