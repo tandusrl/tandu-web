@@ -6,7 +6,7 @@ $(document).ready(function() {
   var flagScroll = true;
 
   $( window ).scroll(function() {
-    var offsetTopMin = $('#tnd-first-slide').offset().top + 200;
+    var offsetTopMin = $('#tnd-first-slide').offset().top + 100;
     var st = $(this).scrollTop();
 
     if($('#tnd-first-slide').offset().top >= $('header').height() ){
@@ -22,14 +22,14 @@ $(document).ready(function() {
 
     if($(window).scrollTop() >  $('#tnd-fourth-spacer').offset().top){
       $('#carousel-team .item.active .stamp').css('top', '-40px');
-      $('#carousel-team .item.active #html5-svg').css('left', '-49px');
-      $('#carousel-team .item.active #angular-svg').css('right', '-24px');
-      $('#carousel-team .item.active #ruby-svg').css('right', '-15px');
-      $('#carousel-team .item.active #ios-svg').css('left', '-10px');
-      $('#carousel-team .item.active #swift-svg').css('right', '-15px');
-      $('#carousel-team .item.active #nodejs-svg').css('left', '-46px');
-      $('#carousel-team .item.active #light-svg').css('right', '-32px');
-      $('#carousel-team .item.active #line-chart-svg').css('left', '-41px');
+      $('#carousel-team .item.active #html5').css('left', '-27x');
+      $('#carousel-team .item.active #angular').css('right', '-24px');
+      $('#carousel-team .item.active #ruby').css('right', '-15px');
+      $('#carousel-team .item.active #ios').css('left', '-10px');
+      $('#carousel-team .item.active #swift').css('right', '-15px');
+      $('#carousel-team .item.active #nodejs').css('left', '-46px');
+      $('#carousel-team .item.active #light').css('right', '-32px');
+      $('#carousel-team .item.active #line-chart').css('left', '-41px');
     }
     if(st < lastScrollTop){
       //On scroll UP
@@ -82,26 +82,26 @@ $(document).ready(function() {
 
   $('#carousel-team').on('slide.bs.carousel', function () {
     $('#carousel-team .item.active .stamp').css('top', '-48px');
-    $('#carousel-team .item.active #html5-svg').css('left', '-218px');
-    $('#carousel-team .item.active #angular-svg').css('right', '-218px');
-    $('#carousel-team .item.active #ruby-svg').css('right', '-218px');
-    $('#carousel-team .item.active #ios-svg').css('left', '-218px');
-    $('#carousel-team .item.active #swift-svg').css('right', '-218px');
-    $('#carousel-team .item.active #nodejs-svg').css('left', '-218px');
-    $('#carousel-team .item.active #light-svg').css('right', '-218px');
-    $('#carousel-team .item.active #line-chart-svg').css('left', '-218px');
+    $('#carousel-team .item.active #html5').css('left', '-218px');
+    $('#carousel-team .item.active #angular').css('right', '-218px');
+    $('#carousel-team .item.active #ruby').css('right', '-218px');
+    $('#carousel-team .item.active #ios').css('left', '-218px');
+    $('#carousel-team .item.active #swift').css('right', '-218px');
+    $('#carousel-team .item.active #nodejs').css('left', '-218px');
+    $('#carousel-team .item.active #light').css('right', '-218px');
+    $('#carousel-team .item.active #line-chart').css('left', '-218px');
   });
 
   $('#carousel-team').on('slid.bs.carousel', function () {
       $('#carousel-team .item.active .stamp').css('top', '-40px');
-      $('#carousel-team .item.active #html5-svg').css('left', '-49px');
-      $('#carousel-team .item.active #angular-svg').css('right', '-24px');
-      $('#carousel-team .item.active #ruby-svg').css('right', '-15px');
-      $('#carousel-team .item.active #ios-svg').css('left', '-10px');
-      $('#carousel-team .item.active #nodejs-svg').css('left', '-46px');
-      $('#carousel-team .item.active #swift-svg').css('right', '-15px');
-      $('#carousel-team .item.active #light-svg').css('right', '-32px');
-      $('#carousel-team .item.active #line-chart-svg').css('left', '-41px');
+      $('#carousel-team .item.active #html5').css('left', '-27px');
+      $('#carousel-team .item.active #angular').css('right', '-24px');
+      $('#carousel-team .item.active #ruby').css('right', '-15px');
+      $('#carousel-team .item.active #ios').css('left', '-10px');
+      $('#carousel-team .item.active #nodejs').css('left', '-46px');
+      $('#carousel-team .item.active #swift').css('right', '-15px');
+      $('#carousel-team .item.active #light').css('right', '-32px');
+      $('#carousel-team .item.active #line-chart').css('left', '-41px');
   });
 
   showHideNavbar();
