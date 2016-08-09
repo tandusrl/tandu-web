@@ -11,6 +11,9 @@
 function Animate(canvas, options) {
   this.canvas = canvas;
   this.options = defaults(options || {}, this.options);
+  if(!this.options.wrapperElement){
+    this.options.wrapperElement = this.canvas.parentElement;
+  }
   this.init();
 }
 
@@ -30,16 +33,16 @@ Animate.prototype.options = {
   lineWidth: 1,
   lines: 3,  // Number of closest lines to draw
   updateClosest : false, // Update closet points each loop
-  mouse: true, // Link to mouse or random
-
+  mouse: true // Link to mouse or random
 };
 
 /**
  * Setup everything
  */
 Animate.prototype.init = function(){
-  this.width = $("#tnd-skills").innerWidth();
-  this.height = $("#tnd-skills").innerHeight();
+  this.wrapperElement = this.options.wrapperElement;
+  this.width = $(this.wrapperElement).innerWidth();
+  this.height = $(this.wrapperElement).innerHeight();
   this.target = {
     position: {
       x: this.width / 2,
@@ -182,8 +185,8 @@ Animate.prototype.shiftPoints = function() {
  * Make sure the canvas is the right size
  */
 Animate.prototype.resize = function() {
-  this.width = $("#tnd-skills").innerWidth();
-  this.height = $("#tnd-skills").innerHeight();
+  this.width = $(this.wrapperElement).innerWidth();
+  this.height = $(this.wrapperElement).innerHeight();
   this.canvas.width = this.width;
   this.canvas.height = this.height;
 };
@@ -322,8 +325,7 @@ Circle.prototype.draw = function() {
 };
 
 // Get the balls rolling
-new Animate(document.getElementById('canvas'));
-
+new Animate(document.getElementById('canvas'), { wrapperElement: document.getElementById('tnd-skills')});
 
 /**
  * Utility Function to set default options
