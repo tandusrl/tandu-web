@@ -15,7 +15,7 @@ function pathPrepareReverse ($el) {
 }
 
 
-$('#pc-group .pc-animate, #growth-leaf, .worm-svg path, #idea-center, #idea-raggi, #team-first-line path, #logo-tandustroke-svg path').each(function(index){
+$('#pc-group .pc-animate, #growth-leaf, .worm-svg path, #idea-center, #idea-raggi, #idea-pencil, #team-first-line path, #logo-tandustroke-svg path').each(function(index){
     pathPrepare(this);
 });
 
@@ -32,6 +32,10 @@ var tweenCenter = new TimelineMax();
 
 var tweenRaggi = new TimelineMax();
     tweenRaggi.add(TweenMax.to($('#idea-raggi'), 1, {strokeDashoffset: 0, ease:Linear.easeNone}));
+
+var tweenPencil = new TimelineMax();
+        tweenPencil.add(TweenMax.to($('#idea-pencil'), 1, {strokeDashoffset: 0, ease:Linear.easeNone}));
+
   //tween.add(TweenMax.to('path', 1, {stroke: '#33629c', ease:Linear.easeNone}), 0);  // change color during the whole thing
 
 var tween1 = new TimelineMax();
@@ -59,6 +63,11 @@ var scene0 = new ScrollMagic.Scene({triggerElement: '#trigger-idea', dusration: 
 
 var scene0a = new ScrollMagic.Scene({triggerElement: '#trigger-idea', duration: 300, tweenChanges: true})
         .setTween(tweenRaggi)
+        //.addIndicators() // add indicators (requires plugin)
+        .addTo(controller);
+
+var scene0b = new ScrollMagic.Scene({triggerElement: '#trigger-idea', duration: 300, tweenChanges: true})
+        .setTween(tweenPencil)
         //.addIndicators() // add indicators (requires plugin)
         .addTo(controller);
 
