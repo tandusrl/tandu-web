@@ -25,10 +25,10 @@ Animate.prototype.options = {
   speed: 10, // Time in seconds to shift points
   sync: false, // Should points move in sync
   distance: 100, // Distance to move points
-   //lineColor: '200, 200, 200',
-   //circleColor: '200, 200, 200',
-  lineColor: '255, 115, 0',
-  circleColor: '255, 115, 0',
+  lineColor: '74, 100, 143',
+  circleColor: '74, 100, 143',
+  // lineColor: '255, 115, 0',
+  // circleColor: '255, 115, 0',
   radius: 5,
   lineWidth: 1,
   lines: 3,  // Number of closest lines to draw

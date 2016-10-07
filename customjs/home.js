@@ -20,6 +20,7 @@ $(document).ready(function() {
       $('#home-container-text').css('opacity', 1);
     }
 
+
     if($(window).scrollTop() >  $('#tnd-fourth-spacer').offset().top){
       $('#carousel-team .item.active .stamp').css('top', '-40px');
       $('#carousel-team .item.active #html5').css('left', '-27x');
@@ -46,11 +47,13 @@ $(document).ready(function() {
         $('#tnd-first-spacer').css('position', '');
       }
 
-      // if($(window).scrollTop() < offsetTopMin ){
-      //   $('#home-container-text').css('opacity', 0);
-      // }
-
     }else{
+      console.log("scroll down");
+          if($(window).scrollTop() < $(".end-animation-write").offset().top){
+            debugger;
+              $('#home-container-text').css('opacity', 0);
+          }
+
           if(flagScroll && $(window).scrollTop() > $('.start-animation-write').offset().top){
             $('#typed').typed({
                      stringsElement: $('#typed-strings'),
