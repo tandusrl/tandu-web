@@ -5,6 +5,15 @@ $(document).ready(function() {
   var lastScrollTop = 0;
   var flagScroll = true;
 
+  $('#typed').typed({
+           stringsElement: $('#typed-strings'),
+           loop:true,
+           backDelay: 500,
+           loopCount: 2,
+           typeSpeed: 100
+   });
+  flagScroll = false;
+
   $( window ).scroll(function() {
     var offsetTopMin = $('#tnd-first-slide').offset().top + 100;
     var st = $(this).scrollTop();
@@ -13,6 +22,7 @@ $(document).ready(function() {
       $('#tnd-first-slide').css('position', 'relative');
       $('#tnd-first-slide').css('top', '0px');
       $('#tnd-first-spacer').css('position', 'relative');
+      $('.worm-svg').removeAttr('display');
       flagScroll = true;
     }
 
@@ -48,22 +58,21 @@ $(document).ready(function() {
       }
 
     }else{
-      console.log("scroll down");
+          console.log("scroll down");
           if($(window).scrollTop() < $(".end-animation-write").offset().top){
-            debugger;
               $('#home-container-text').css('opacity', 0);
           }
 
-          if(flagScroll && $(window).scrollTop() > $('.start-animation-write').offset().top){
-            $('#typed').typed({
-                     stringsElement: $('#typed-strings'),
-                     loop:true,
-                     backDelay: 500,
-                     loopCount: 2,
-                     typeSpeed: 100
-             });
-            flagScroll = false;
-          }
+          //if(flagScroll && $(window).scrollTop() > $('.start-animation-write').offset().top){
+            // $('#typed').typed({
+            //          stringsElement: $('#typed-strings'),
+            //          loop:true,
+            //          backDelay: 500,
+            //          loopCount: 2,
+            //          typeSpeed: 100
+            //  });
+            // flagScroll = false;
+          //}
     }
 
     lastScrollTop = st;
@@ -80,7 +89,8 @@ $(document).ready(function() {
   };
 
   $('#carousel-team').carousel({
-    interval: 3000
+    //interval: 3000
+    interval: 999999999
   });
 
   $('#carousel-team').on('slide.bs.carousel', function () {

@@ -15,7 +15,7 @@ function pathPrepareReverse ($el) {
 }
 
 
-$('#pc-group .pc-animate, #growth-leaf, .worm-svg path, #idea-center, #idea-raggi, #idea-pencil, #team-first-line path, #logo-tandustroke-svg path').each(function(index){
+$('#pc-group .pc-animate, #growth-leaf, .worm-svg path, #idea-center, #idea-raggi, #idea-pencil, #team-first-line path, #logo-tandustroke-svg path, #intro-line path, #circle-1, #circle-1, #circle-2, #circle-3, .line-skills path, .generic-button, .product-button').each(function(index){
     pathPrepare(this);
 });
 
@@ -34,7 +34,7 @@ var tweenRaggi = new TimelineMax();
     tweenRaggi.add(TweenMax.to($('#idea-raggi'), 1, {strokeDashoffset: 0, ease:Linear.easeNone}));
 
 var tweenPencil = new TimelineMax();
-        tweenPencil.add(TweenMax.to($('#idea-pencil'), 1, {strokeDashoffset: 0, ease:Linear.easeNone}));
+    tweenPencil.add(TweenMax.to($('#idea-pencil'), 1, {strokeDashoffset: 0, ease:Linear.easeNone}));
 
   //tween.add(TweenMax.to('path', 1, {stroke: '#33629c', ease:Linear.easeNone}), 0);  // change color during the whole thing
 
@@ -54,9 +54,23 @@ var tweenLine2 = new TimelineMax();
     tweenLine2.add(TweenMax.to($('#team-second-line path'), 1, {strokeDashoffset: 0, ease:Linear.easeNone}));
 
 
+var tweenFirstLineCircle = new TimelineMax()
+      .add(TweenMax.to($('#intro-line path'), 1, {strokeDashoffset: 0, ease:Linear.easeNone}))
+      .add(TweenMax.to($('#circle-1'), 1, {strokeDashoffset: 0, ease:Linear.easeNone}))
+      .add(TweenMax.to($('#circle-2'), 1, {strokeDashoffset: 0, ease:Linear.easeNone}))
+      .add(TweenMax.to($('#circle-3'), 1, {strokeDashoffset: 0, ease:Linear.easeNone}))
+      .add(TweenMax.to($('.line-skills path'), 1, {strokeDashoffset: 0, ease:Linear.easeNone}))
+
+var productButton = new TimelineMax()
+      .add(TweenMax.to($('.product-button'), 1, {strokeDashoffset: 0, ease:Linear.easeNone}));
+
+
+var genericButton = new TimelineMax()
+      .add(TweenMax.to($('.generic-button'), 1, {strokeDashoffset: 0, ease:Linear.easeNone}));
+
 
 // build scene
-var scene0 = new ScrollMagic.Scene({triggerElement: '#trigger-idea', dusration: 300, tweenChanges: true})
+var scene0 = new ScrollMagic.Scene({triggerElement: '#trigger-idea', duration: 300, tweenChanges: true})
         .setTween(tweenCenter)
         //.addIndicators() // add indicators (requires plugin)
         .addTo(controller);
@@ -81,19 +95,26 @@ var scene2 = new ScrollMagic.Scene({triggerElement: '#trigger2', duration: 400, 
         //.addIndicators() // add indicators (requires plugin)
         .addTo(controller);
 
-var scene3 = new ScrollMagic.Scene({triggerElement: '#triggerWorm', duration: $('#tnd-first-spacer').height(), tweenChanges: true})
+var heightContainer = $('#about').height() + $('#tnd-first-spacer').height() + $('#tnd-third-spacer').height();
+
+var scene3 = new ScrollMagic.Scene({triggerElement: '#triggerWorm', duration: heightContainer, tweenChanges: true})
         .setTween(tweenWorm)
         //.addIndicators() // add indicators (requires plugin)
         .addTo(controller);
 
-var scene4 = new ScrollMagic.Scene({triggerElement: '#triggerLine', duration: 400, tweenChanges: true})
-        .setTween(tweenLine1)
-        //.addIndicators() // add indicators (requires plugin)
-        .addTo(controller);
+var scene6 = new ScrollMagic.Scene({triggerElement: '#triggerLineCircle', duration: 500, tweenChanges: true})
+          .setTween(tweenFirstLineCircle)
+          //.addIndicators() // add indicators (requires plugin)
+          .addTo(controller);
 
-var scene5 = new ScrollMagic.Scene({triggerElement: '#triggerLine', duration: 400, tweenChanges: true})
-        .setTween(tweenLine2)
-        //.addIndicators() // add indicators (requires plugin)
-        .addTo(controller);
+var scene7 = new ScrollMagic.Scene({triggerElement: '#triggerButton', duration: 500, tweenChanges: true})
+          .setTween(productButton)
+          .addIndicators() // add indicators (requires plugin)
+          .addTo(controller);
+
+var scene8 = new ScrollMagic.Scene({triggerElement: '#triggerContact', duration: 500, tweenChanges: true})
+          .setTween(genericButton)
+          //.addIndicators() // add indicators (requires plugin)
+          .addTo(controller);
 
 });
