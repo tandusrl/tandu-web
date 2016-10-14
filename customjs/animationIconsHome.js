@@ -109,7 +109,7 @@ var scene6 = new ScrollMagic.Scene({triggerElement: '#triggerLineCircle', durati
 
 var scene7 = new ScrollMagic.Scene({triggerElement: '#triggerButton', duration: 500, tweenChanges: true})
           .setTween(productButton)
-          .addIndicators() // add indicators (requires plugin)
+          //.addIndicators() // add indicators (requires plugin)
           .addTo(controller);
 
 var scene8 = new ScrollMagic.Scene({triggerElement: '#triggerContact', duration: 500, tweenChanges: true})
