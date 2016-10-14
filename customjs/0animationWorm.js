@@ -1,5 +1,6 @@
 'use strict';
 $(document).ready(function() {
+
   var points = [];
   var points2 = [];
   var svgOffset =  $('#start-animation-worm').offset();

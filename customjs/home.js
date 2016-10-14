@@ -15,10 +15,10 @@ $(document).ready(function() {
   flagScroll = false;
 
   $( window ).scroll(function() {
-    var offsetTopMin = $('#tnd-first-slide').offset().top + 100;
+    var offsetTopMin = $('#tnd-first-slide').offset().top;
     var st = $(this).scrollTop();
 
-    if($('#tnd-first-slide').offset().top >= $('header').height() ){
+    if($('#tnd-first-slide').offset().top >= $("#start-animation-worm").offset().top ){
       $('#tnd-first-slide').css('position', 'relative');
       $('#tnd-first-slide').css('top', '0px');
       $('#tnd-first-spacer').css('position', 'relative');
@@ -26,8 +26,9 @@ $(document).ready(function() {
       flagScroll = true;
     }
 
-    if( offsetTopMin >= $('header').height() ){
+    if( offsetTopMin >= $('header').height() / 2 ){
       $('#home-container-text').css('opacity', 1);
+      $('#btn-scroll').css('opacity', 1);
     }
 
 
@@ -42,6 +43,7 @@ $(document).ready(function() {
       $('#carousel-team .item.active #light').css('right', '-32px');
       $('#carousel-team .item.active #line-chart').css('left', '-41px');
     }
+
     if(st < lastScrollTop){
       //On scroll UP
       if($(window).scrollTop() < $('#about').offset().top){
@@ -55,24 +57,16 @@ $(document).ready(function() {
       if($(window).scrollTop() < $('#tnd-first-slide').offset().top){
         $('#tnd-first-slide').css('position', 'fixed');
         $('#tnd-first-spacer').css('position', '');
+        $('#home-container-text').css('opacity', 0);
+        $('#btn-scroll').css('opacity', 0);
       }
-
     }else{
-          console.log("scroll down");
-          if($(window).scrollTop() < $(".end-animation-write").offset().top){
-              $('#home-container-text').css('opacity', 0);
-          }
+          //Scroll Down
+    }
 
-          //if(flagScroll && $(window).scrollTop() > $('.start-animation-write').offset().top){
-            // $('#typed').typed({
-            //          stringsElement: $('#typed-strings'),
-            //          loop:true,
-            //          backDelay: 500,
-            //          loopCount: 2,
-            //          typeSpeed: 100
-            //  });
-            // flagScroll = false;
-          //}
+    if($(window).scrollTop() == 0){
+        $('#home-container-text').css('opacity', 0);
+        $('#btn-scroll').css('opacity', 0);
     }
 
     lastScrollTop = st;
@@ -115,6 +109,14 @@ $(document).ready(function() {
       $('#carousel-team .item.active #swift').css('right', '-15px');
       $('#carousel-team .item.active #light').css('right', '-32px');
       $('#carousel-team .item.active #line-chart').css('left', '-41px');
+  });
+
+  $('#tnd-logo').on('click',function(){
+    $('body, html').animate({scrollTop:300}, 2000);
+  });
+
+  $('#btn-scroll').on('click',function(){
+    $('body, html').animate({scrollTop:$("#typed").offset().top}, 2000);
   });
 
   showHideNavbar();
