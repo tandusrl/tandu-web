@@ -106,7 +106,7 @@ var scene3 = new ScrollMagic.Scene({triggerElement: '#triggerWorm', duration: he
 
 var scene6 = new ScrollMagic.Scene({triggerElement: '#triggerLineCircle', duration: 500, tweenChanges: true})
           .setTween(tweenFirstLineCircle)
-          .addIndicators() // add indicators (requires plugin)
+          //.addIndicators() // add indicators (requires plugin)
           .addTo(controller);
 
 var scene7 = new ScrollMagic.Scene({triggerElement: '#triggerButton', duration: 500, tweenChanges: true})
