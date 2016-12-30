@@ -83,7 +83,7 @@ $(document).ready(function() {
   };
 
   $('#carousel-team').carousel({
-    //interval: 3000
+    //interval: 4000
     interval: 999999999
   });
 
@@ -94,7 +94,7 @@ $(document).ready(function() {
     $('#carousel-team .item.active #ruby').css('right', '-218px');
     $('#carousel-team .item.active #ios').css('left', '-218px');
     $('#carousel-team .item.active #swift').css('right', '-218px');
-    $('#carousel-team .item.active #nodejs').css('left', '-218px');
+    $('#carousel-team .item.active #nodejs').css('left', '-230px');
     $('#carousel-team .item.active #light').css('right', '-218px');
     $('#carousel-team .item.active #line-chart').css('left', '-218px');
   });

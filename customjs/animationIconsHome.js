@@ -15,7 +15,7 @@ function pathPrepareReverse ($el) {
 }
 
 
-$('#pc-group .pc-animate, #growth-leaf, .worm-svg path, #idea-center, #idea-raggi, #idea-pencil, #team-first-line path, #logo-tandustroke-svg path, #intro-line path, #circle-1, #circle-1, #circle-2, #circle-3, .line-skills path, .generic-button, .product-button').each(function(index){
+$('#pc-group .pc-animate, #growth-leaf, .worm-svg path, #idea-center, #idea-raggi, #idea-pencil, #team-first-line path, #logo-tandustroke-svg path, #intro-line path, #circle-1, #circle-1, #circle-2, #circle-3, .line-skills path, .generic-button, .product-button, #rectangle path, .last-line path').each(function(index){
     pathPrepare(this);
 });
 
@@ -60,6 +60,8 @@ var tweenFirstLineCircle = new TimelineMax()
       .add(TweenMax.to($('#circle-2'), 1, {strokeDashoffset: 0, ease:Linear.easeNone}))
       .add(TweenMax.to($('#circle-3'), 1, {strokeDashoffset: 0, ease:Linear.easeNone}))
       .add(TweenMax.to($('.line-skills path'), 1, {strokeDashoffset: 0, ease:Linear.easeNone}))
+      .add(TweenMax.to($('#rectangle path'), 1, {strokeDashoffset: 0, ease:Linear.easeNone}))
+      .add(TweenMax.to($('.last-line path'), 1, {strokeDashoffset: 0, ease:Linear.easeNone}));
 
 var productButton = new TimelineMax()
       .add(TweenMax.to($('.product-button'), 1, {strokeDashoffset: 0, ease:Linear.easeNone}));
@@ -104,7 +106,7 @@ var scene3 = new ScrollMagic.Scene({triggerElement: '#triggerWorm', duration: he
 
 var scene6 = new ScrollMagic.Scene({triggerElement: '#triggerLineCircle', duration: 500, tweenChanges: true})
           .setTween(tweenFirstLineCircle)
-          //.addIndicators() // add indicators (requires plugin)
+          .addIndicators() // add indicators (requires plugin)
           .addTo(controller);
 
 var scene7 = new ScrollMagic.Scene({triggerElement: '#triggerButton', duration: 500, tweenChanges: true})
