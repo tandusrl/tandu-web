@@ -15,7 +15,7 @@ function pathPrepareReverse ($el) {
 }
 
 
-$('#pc-group .pc-animate, #growth-leaf, .worm-svg path, #idea-center, #idea-raggi, #idea-pencil, #team-first-line path, #logo-tandustroke-svg path, #intro-line path, #circle-1, #circle-1, #circle-2, #circle-3, .line-skills path, .generic-button, .product-button, #rectangle path, .last-line path').each(function(index){
+$('#cloud-group .cloud-animate, #cloud-worm, .cloud-inside, .smoke-left-right, #smoke-center, .worm-svg path, #idea-center, #idea-raggi, #idea-pencil, #team-first-line path, #logo-tandustroke-svg path, #intro-line path, #circle-1, #circle-1, #circle-2, #circle-3, .line-skills path, .generic-button, .product-button, #rectangle path, .last-line path').each(function(index){
     pathPrepare(this);
 });
 
@@ -38,11 +38,14 @@ var tweenPencil = new TimelineMax();
 
   //tween.add(TweenMax.to('path', 1, {stroke: '#33629c', ease:Linear.easeNone}), 0);  // change color during the whole thing
 
-var tween1 = new TimelineMax();
-    tween1.add(TweenMax.to($('#pc-group .pc-animate'), 1, {strokeDashoffset: 0, ease:Linear.easeNone}));
+var tween1 = new TimelineMax()
+      .add(TweenMax.to($('#cloud-group .cloud-animate'), 1, {strokeDashoffset: 0, ease:Linear.easeNone}))
+      .add(TweenMax.to($('.cloud-inside'), 1, {strokeDashoffset: 0, ease:Linear.easeNone}))
+      .add(TweenMax.to($('#cloud-worm'), 1, {strokeDashoffset: 0, ease:Linear.easeNone}));
 
-var tween2 = new TimelineMax();
-    tween2.add(TweenMax.to($('#growth-leaf'), 1, {strokeDashoffset: 0, ease:Linear.easeNone}));
+var tween2 = new TimelineMax()
+        .add(TweenMax.to($('.smoke-left-right'), 1, {strokeDashoffset: 0, ease:Linear.easeNone}))
+        .add(TweenMax.to($('#smoke-center'), 1, {strokeDashoffset: 0, ease:Linear.easeNone}));
 
 var tweenWorm = new TimelineMax();
     tweenWorm.add(TweenMax.to($('.worm-svg path'), 1, {strokeDashoffset: 0, ease:Linear.easeNone}));
@@ -98,13 +101,14 @@ var scene2 = new ScrollMagic.Scene({triggerElement: '#trigger2', duration: 400, 
         .addTo(controller);
 
 var heightContainer = $('#about').height() + $('#tnd-first-spacer').height() + $('#tnd-third-spacer').height();
+var heightSkills = $("#skills-content").height();
 
-var scene3 = new ScrollMagic.Scene({triggerElement: '#triggerWorm', duration: heightContainer, tweenChanges: true})
+var scene3 = new ScrollMagic.Scene({triggerElement: '#triggerWorm', duration: heightContainer, offset: 100, tweenChanges: true})
         .setTween(tweenWorm)
         //.addIndicators() // add indicators (requires plugin)
         .addTo(controller);
 
-var scene6 = new ScrollMagic.Scene({triggerElement: '#triggerLineCircle', duration: 500, tweenChanges: true})
+var scene6 = new ScrollMagic.Scene({triggerElement: '#triggerLineCircle', duration: heightSkills, tweenChanges: true})
           .setTween(tweenFirstLineCircle)
           //.addIndicators() // add indicators (requires plugin)
           .addTo(controller);

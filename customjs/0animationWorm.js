@@ -26,7 +26,7 @@ var line = d3.line()
 var heightContainer = $('#about').height() + $('#tnd-first-spacer').height() + $('#tnd-third-spacer').height();
 var widthContainer = $('body').width();
 var widthLine = $('body').width() - 7;
-var heightLine = $('#tnd-fourth-spacer').height() + $('#tnd-skills').height() + 27;
+var heightLine = $('#tnd-skills').height();
 var viewBox = '0 0 ' + widthContainer + ' ' + heightContainer;
 var viewBox1 = '0 0 ' + widthLine + ' ' + heightLine ;
 
@@ -52,9 +52,9 @@ var path1 = lineSvg.append('path')
     .attr('d', line);
 
 
-// var circle = svg.append('circle')
-//     .attr('r',10)
-//     .attr('transform', 'translate(' + points[0] + ')');
+var circle = svg.append('circle')
+    .attr('r',10)
+    .attr('transform', 'translate(' + points[0] + ')');
 
 
 function tweenDash() {
