@@ -1,9 +1,7 @@
-$(document).ready(function() {
-
+$(window).load(function() {
   // init Isotope
   var $grid = $('.projects-box').isotope({
-    itemSelector: '.single-project',
-    layoutMode: 'fitRows'
+    itemSelector: '.single-project'
   });
   // filter items on button click
   $('.projects-menu').on( 'click', 'li', function() {
