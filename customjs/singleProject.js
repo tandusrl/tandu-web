@@ -23,7 +23,7 @@ $(document).ready(function() {
       $($el).css('stroke-dashoffset', lineLength);
   }
 
-  $('#empty-cloud path, #empty-app path, #phone-project-svg path, #arrow-svg path').each(function(index){
+  $('#empty-cloud path, #empty-app path, #empty-website path, #arrow-svg path').each(function(index){
       pathPrepare(this);
   });
 
@@ -53,10 +53,11 @@ $(document).ready(function() {
 
 /*----- Animation SMARTPHONE */
   var tweetPhone = new TimelineMax();
-      tweetPhone.add(TweenMax.to($('#phone-project-svg  path'), 1, {strokeDashoffset: 0, ease:Linear.easeNone}));
+      tweetPhone.add(TweenMax.to($('#empty-website  path'), 1, {strokeDashoffset: 0, ease:Linear.easeNone}));
 
   var scene0 = new ScrollMagic.Scene({triggerElement: '#animation-start', duration: 300, tweenChanges: true})
       .setTween(tweetPhone)
+      .reverse(false)
       .addTo(controller);
 /*----- END Animation SMARTPHONE */
 
