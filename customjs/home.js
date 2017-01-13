@@ -72,17 +72,7 @@ $(document).ready(function() {
     }
 
     lastScrollTop = st;
-    showHideNavbar();
   });
-
-
-  var showHideNavbar = function(){
-       // if(window.innerWidth > 400 && $(window).scrollTop() < $('#about').offset().top){
-       //    $('.burger').css('top', '-90px');
-       //  }else{
-       //    $('.burger').css('top', '0');
-       //  }
-  };
 
   $('#carousel-team').carousel({
     //interval: 4000
@@ -113,14 +103,12 @@ $(document).ready(function() {
       $('#carousel-team .item.active #line-chart').css('left', '-41px');
   });
 
-  $('#tnd-logo').on('click',function(){
+  $('#tnd-logo img').on('click',function(){
     $('body, html').animate({scrollTop:300}, 2000);
   });
 
   $('#btn-scroll').on('click',function(){
     $('body, html').animate({scrollTop:$("#typed").offset().top}, 2000);
   });
-
-  showHideNavbar();
   $('.burger').css('top', '-90px');
 });

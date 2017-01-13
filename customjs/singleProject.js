@@ -3,13 +3,6 @@ $(document).ready(function() {
 
   $(".line").css("width","445px");
 
-  // $(".prev").hover(function(){
-  //   $("#arrow-svg").css("margin-left","-30px");
-  // });
-
-  // $(".prev").mouseout(function(){
-  //   $("#arrow-svg").css("margin-left","0px");
-  // });
   $('#typed-nav').typed({
            stringsElement: $('#typed-strings'),
            loop:false,
@@ -23,7 +16,7 @@ $(document).ready(function() {
       $($el).css('stroke-dashoffset', lineLength);
   }
 
-  $('#empty-cloud path, #empty-app path, #empty-website path, #arrow-svg path').each(function(index){
+  $('#empty-cloud path, #empty-app path, #empty-website path, #empty-graphics path').each(function(index){
       pathPrepare(this);
   });
 
@@ -64,10 +57,11 @@ $(document).ready(function() {
 
 /*----- Animation LINE */
   var tweenArrow = new TimelineMax();
-      tweenArrow.add(TweenMax.to($('#arrow-svg path'), 1, {strokeDashoffset: 0, ease:Linear.easeNone}));
+      tweenArrow.add(TweenMax.to($('#empty-graphics path'), 1, {strokeDashoffset: 0, ease:Linear.easeNone}));
 
   var scene0 = new ScrollMagic.Scene({triggerElement: '#animation-start', duration: 300, tweenChanges: true})
       .setTween(tweenArrow)
+      .reverse(false)
       .addTo(controller);
 /*----- END Animation SMARTPHONE */
 
