@@ -15,7 +15,7 @@ function pathPrepareReverse ($el) {
 }
 
 
-$('#cloud-group .cloud-animate, #cloud-worm, .cloud-inside, .smoke-left-right, #smoke-center, .worm-svg path, #idea-center, #idea-raggi, #idea-pencil, #team-first-line path, #logo-tandustroke-svg path, #intro-line path, #circle-1, #circle-1, #circle-2, #circle-3, .line-skills path, .generic-button, .product-button, #rectangle path, .last-line path').each(function(index){
+$('#cloud-group .cloud-animate, #cloud-worm, .cloud-inside, .smoke-left-right, #smoke-center, .worm-svg path, #idea-center, #idea-raggi, #idea-pencil, #team-first-line path, #logo-tandustroke-svg path, #intro-line path, #circle-1, #circle-1, #circle-2, #circle-3, .line-skills path, .generic-button, .product-button, .team-line path, #rectangle path, .last-line path').each(function(index){
     pathPrepare(this);
 });
 
@@ -63,6 +63,7 @@ var tweenFirstLineCircle = new TimelineMax()
       .add(TweenMax.to($('#circle-2'), 1, {strokeDashoffset: 0, ease:Linear.easeNone}))
       .add(TweenMax.to($('#circle-3'), 1, {strokeDashoffset: 0, ease:Linear.easeNone}))
       .add(TweenMax.to($('.line-skills path'), 1, {strokeDashoffset: 0, ease:Linear.easeNone}))
+      .add(TweenMax.to($('.team-line path'), 1, {strokeDashoffset: 0, ease:Linear.easeNone}))
       .add(TweenMax.to($('#rectangle path'), 1, {strokeDashoffset: 0, ease:Linear.easeNone}))
       .add(TweenMax.to($('.last-line path'), 1, {strokeDashoffset: 0, ease:Linear.easeNone}));
 
@@ -101,14 +102,14 @@ var scene2 = new ScrollMagic.Scene({triggerElement: '#trigger2', duration: 400, 
         .addTo(controller);
 
 var heightContainer = $('#about').height() + $('#tnd-first-spacer').height() + $('#tnd-third-spacer').height();
-var heightSkills = $("#skills-content").height();
+var heightSkills = $("#skills-content").height() + $("#tnd-fourth-spacer").height();
 
 var scene3 = new ScrollMagic.Scene({triggerElement: '#triggerWorm', duration: heightContainer, offset: 100, tweenChanges: true})
         .setTween(tweenWorm)
         //.addIndicators() // add indicators (requires plugin)
         .addTo(controller);
 
-var scene6 = new ScrollMagic.Scene({triggerElement: '#triggerLineCircle', duration: heightSkills, tweenChanges: true})
+var scene6 = new ScrollMagic.Scene({triggerElement: '#triggerLineCircle', duration: 1000, offset: 400, tweenChanges: true})
           .setTween(tweenFirstLineCircle)
           //.addIndicators() // add indicators (requires plugin)
           .addTo(controller);
