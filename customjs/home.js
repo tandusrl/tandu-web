@@ -24,6 +24,7 @@ $(document).ready(function() {
       $('#tnd-first-spacer').css('position', 'relative');
       $('.worm-svg').removeAttr('display');
       $('.burger').css('top', '0px');
+      $("#triggerWorm").css("display","inline-block");
       flagScroll = true;
     }
 

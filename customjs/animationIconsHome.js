@@ -58,10 +58,6 @@ var tweenLine2 = new TimelineMax();
 
 
 var tweenFirstLineCircle = new TimelineMax()
-      .add(TweenMax.to($('#intro-line path'), 1, {strokeDashoffset: 0, ease:Linear.easeNone}))
-      .add(TweenMax.to($('#circle-1'), 1, {strokeDashoffset: 0, ease:Linear.easeNone}))
-      .add(TweenMax.to($('#circle-2'), 1, {strokeDashoffset: 0, ease:Linear.easeNone}))
-      .add(TweenMax.to($('#circle-3'), 1, {strokeDashoffset: 0, ease:Linear.easeNone}))
       .add(TweenMax.to($('.line-skills path'), 1, {strokeDashoffset: 0, ease:Linear.easeNone}))
       .add(TweenMax.to($('.team-line path'), 1, {strokeDashoffset: 0, ease:Linear.easeNone}))
       .add(TweenMax.to($('#rectangle path'), 1, {strokeDashoffset: 0, ease:Linear.easeNone}))
@@ -76,42 +72,45 @@ var genericButton = new TimelineMax()
 
 
 // build scene
-var scene0 = new ScrollMagic.Scene({triggerElement: '#trigger-idea', duration: 300, tweenChanges: true})
+var scene0 = new ScrollMagic.Scene({triggerElement: '#trigger-idea', duration: 500, tweenChanges: true})
         .setTween(tweenCenter)
         //.addIndicators() // add indicators (requires plugin)
         .addTo(controller);
 
-var scene0a = new ScrollMagic.Scene({triggerElement: '#trigger-idea', duration: 300, tweenChanges: true})
-        .setTween(tweenRaggi)
-        //.addIndicators() // add indicators (requires plugin)
-        .addTo(controller);
 
-var scene0b = new ScrollMagic.Scene({triggerElement: '#trigger-idea', duration: 300, tweenChanges: true})
+var scene0b = new ScrollMagic.Scene({triggerElement: '#trigger-idea', duration: 500, tweenChanges: true})
         .setTween(tweenPencil)
         //.addIndicators() // add indicators (requires plugin)
         .addTo(controller);
 
-var scene1 = new ScrollMagic.Scene({triggerElement: '#trigger1', duration: 500, tweenChanges: true})
+var scene1 = new ScrollMagic.Scene({triggerElement: '#trigger1', duration: 900, tweenChanges: true})
         .setTween(tween1)
         //.addIndicators() // add indicators (requires plugin)
         .addTo(controller);
 
-var scene2 = new ScrollMagic.Scene({triggerElement: '#trigger2', duration: 400, tweenChanges: true})
+var scene2 = new ScrollMagic.Scene({triggerElement: '#trigger2', duration: 700, tweenChanges: true})
         .setTween(tween2)
         //.addIndicators() // add indicators (requires plugin)
         .addTo(controller);
 
-var heightContainer = $('#about').height() + $('#tnd-first-spacer').height() + $('#tnd-third-spacer').height();
-var heightSkills = $("#skills-content").height() + $("#tnd-fourth-spacer").height();
+var lenghtWorm = $(".worm-svg path")[0].getTotalLength();
 
-var scene3 = new ScrollMagic.Scene({triggerElement: '#triggerWorm', duration: heightContainer, offset: 100, tweenChanges: true})
+var line_skills = $(".line-skills path")[0].getTotalLength() * 0.3;
+var team_line = $(".team-line path")[0].getTotalLength();
+var rectangle = $("#rectangle path")[0].getTotalLength() * 0.1;
+var last_line = $(".last-line path")[0].getTotalLength();
+
+var totalHeight = line_skills + team_line + rectangle + last_line;
+
+var scene3 = new ScrollMagic.Scene({triggerElement: '#triggerWorm', duration: lenghtWorm, offset: 100, tweenChanges: true})
         .setTween(tweenWorm)
         //.addIndicators() // add indicators (requires plugin)
         .addTo(controller);
 
-var scene6 = new ScrollMagic.Scene({triggerElement: '#triggerLineCircle', duration: 1000, offset: 400, tweenChanges: true})
+
+var scene6 = new ScrollMagic.Scene({triggerElement: '#triggerLineCircle', duration: totalHeight, tweenChanges: true})
           .setTween(tweenFirstLineCircle)
-          //.addIndicators() // add indicators (requires plugin)
+          .addIndicators() // add indicators (requires plugin)
           .addTo(controller);
 
 var scene7 = new ScrollMagic.Scene({triggerElement: '#triggerButton', duration: 500, tweenChanges: true})
