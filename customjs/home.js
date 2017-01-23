@@ -18,6 +18,10 @@ $(document).ready(function() {
     var offsetTopMin = $('#tnd-first-slide').offset().top;
     var st = $(this).scrollTop();
 
+    if($(window).width() <= 400){
+      return;
+    }
+
     if($('#tnd-first-slide').offset().top >= $("#start-animation-worm").offset().top ){
       $('#tnd-first-slide').css('position', 'relative');
       $('#tnd-first-slide').css('top', '0px');
