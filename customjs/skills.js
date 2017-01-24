@@ -2,9 +2,9 @@
 $(document).ready(function() {
 
   $("#arrow-right").click(function(){
+    $(".skills-pc").css("display", "none");
     $(".circle-item").addClass("circle-item-hover");
     $(".content-wrap").addClass("content-wrap-rotate");
-    $(".skills-pc").css("z-index", 0);
 
     if($(".ch-info-back").hasClass("active")){
       $(".skills-lens").show();
@@ -22,7 +22,7 @@ $(document).ready(function() {
     if($(".circle-item").hasClass("circle-item-hover") && !$(".circle-item").hasClass("circle-item-hover1")){
       $(".circle-item").removeClass("circle-item-hover");
       $(".content-wrap").removeClass("content-wrap-rotate");
-      $(".skills-pc").css("z-index", 0);
+      $(".skills-pc").css("display", "inline-block");
       return;
     }
 
