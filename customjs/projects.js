@@ -11,4 +11,15 @@ $(window).load(function() {
     $('.projects-menu li').removeClass('active');
     $(this).addClass('active');
   });
+
+  $('.mobile-filter').on( 'click', function() {
+    if($(this).hasClass("active")){
+      $("#tnd-project-spacer .row-menu").css("height", "0px");
+      $(this).removeClass("active");
+
+    }else{
+      $("#tnd-project-spacer .row-menu").css("height", "auto");
+      $(this).addClass("active");
+    }
+  });
 });
