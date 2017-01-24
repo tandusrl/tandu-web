@@ -22,7 +22,9 @@ $(document).ready(function() {
     if($(".circle-item").hasClass("circle-item-hover") && !$(".circle-item").hasClass("circle-item-hover1")){
       $(".circle-item").removeClass("circle-item-hover");
       $(".content-wrap").removeClass("content-wrap-rotate");
-      $(".skills-pc").css("display", "inline-block");
+      $setTimeout(function() {
+        $(".skills-pc").css("display", "inline-block");
+      }, 10);
       return;
     }
 
