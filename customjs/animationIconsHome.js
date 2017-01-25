@@ -113,7 +113,7 @@ var scene6 = new ScrollMagic.Scene({triggerElement: '#triggerLineCircle', durati
           //.addIndicators() // add indicators (requires plugin)
           .addTo(controller);
 
-if($(window).width() > 500){
+if($(window).width() > 1024){
   var scene7 = new ScrollMagic.Scene({triggerElement: '#triggerButton', duration: 500, tweenChanges: true})
             .setTween(productButton)
             //.addIndicators() // add indicators (requires plugin)
