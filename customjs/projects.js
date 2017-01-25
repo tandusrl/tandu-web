@@ -12,7 +12,7 @@ $(window).load(function() {
     $(this).addClass('active');
     if($(window).width() <= 500){
       $("#tnd-project-spacer .row-menu").css("height", "0px");
-      $(this).removeClass("active");
+      $('.mobile-filter').removeClass("active");
       $(".fa-angle-down").hide();
       $(".fa-angle-up").show();
       $("html").css("overflow-y", "auto");
