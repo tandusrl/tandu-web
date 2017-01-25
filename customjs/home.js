@@ -18,7 +18,7 @@ $(document).ready(function() {
     var offsetTopMin = $('#tnd-first-slide').offset().top;
     var st = $(this).scrollTop();
 
-    if($(window).width() <= 500){
+    if($(window).width() <= 1024){
       return;
     }
 
