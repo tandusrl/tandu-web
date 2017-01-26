@@ -83,6 +83,12 @@ $(document).ready(function() {
     //interval: 4000
     interval: 999999999
   });
+  $('#carouselSkillsIE').carousel({
+    //interval: 4000
+    interval: false,
+    wrap: false
+  });
+
 
   $('#carousel-team').on('slide.bs.carousel', function () {
     $('#carousel-team .item.active .stamp').css('top', '-48px');
