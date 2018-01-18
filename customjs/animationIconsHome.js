@@ -1,5 +1,8 @@
 'use strict';
 $(document).ready(function() {
+// if($(window).width() <= 900){
+//   return;
+// }
 var totalLength = '';
 
 function pathPrepare ($el) {

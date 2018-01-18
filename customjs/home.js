@@ -4,6 +4,7 @@ $(document).ready(function() {
 
   var lastScrollTop = 0;
   var flagScroll = true;
+  $(this).scrollTop(0);
 
   $('#typed').typed({
            stringsElement: $('#typed-strings'),
@@ -14,13 +15,18 @@ $(document).ready(function() {
    });
   flagScroll = false;
 
+  $( window ).resize(function() {
+    $(".worm-svg, .line-skills").remove();
+    createSvg();
+  });
+
   $( window ).scroll(function() {
     var offsetTopMin = $('#tnd-first-slide').offset().top;
     var st = $(this).scrollTop();
 
-    if($(window).width() <= 1024){
-      return;
-    }
+    // if($(window).width() <= 1024){
+    //   return;
+    // }
 
     if($('#tnd-first-slide').offset().top >= $("#start-animation-worm").offset().top ){
       $('#tnd-first-slide').css('position', 'relative');
