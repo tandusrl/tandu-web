@@ -61,10 +61,10 @@ var tweenLine2 = new TimelineMax();
 
 
 var tweenFirstLineCircle = new TimelineMax()
-      .add(TweenMax.to($('.line-skills path'), 1, {strokeDashoffset: 0, ease:Linear.easeNone}))
-      .add(TweenMax.to($('.team-line path'), 1, {strokeDashoffset: 0, ease:Linear.easeNone}))
-      .add(TweenMax.to($('#rectangle path'), 1, {strokeDashoffset: 0, ease:Linear.easeNone}))
-      .add(TweenMax.to($('.last-line path'), 1, {strokeDashoffset: 0, ease:Linear.easeNone}));
+      .add(TweenMax.to($('.line-skills path'), 1, {strokeDashoffset: 0, ease:Linear.easeNone}));
+      // .add(TweenMax.to($('.team-line path'), 1, {strokeDashoffset: 0, ease:Linear.easeNone}))
+      // .add(TweenMax.to($('#rectangle path'), 1, {strokeDashoffset: 0, ease:Linear.easeNone}))
+      // .add(TweenMax.to($('.last-line path'), 1, {strokeDashoffset: 0, ease:Linear.easeNone}));
 
 var productButton = new TimelineMax()
       .add(TweenMax.to($('.product-button'), 1, {strokeDashoffset: 0, ease:Linear.easeNone}));
@@ -98,12 +98,13 @@ var scene2 = new ScrollMagic.Scene({triggerElement: '#trigger2', duration: 700, 
 
 var lenghtWorm = $(".worm-svg path")[0].getTotalLength();
 
-var line_skills = $(".line-skills path")[0].getTotalLength() * 0.3;
+var line_skills = $(".line-skills path")[0].getTotalLength();
 var team_line = $(".team-line path")[0].getTotalLength();
 var rectangle = $("#rectangle path")[0].getTotalLength() * 0.1;
 var last_line = $(".last-line path")[0].getTotalLength();
 
-var totalHeight = line_skills + team_line + rectangle + last_line;
+// var totalHeight = line_skills + team_line + rectangle + last_line;
+var totalHeight = $("#skills-content").height();
 
 var scene3 = new ScrollMagic.Scene({triggerElement: '#triggerWorm', duration: lenghtWorm, offset: 100, tweenChanges: true})
         .setTween(tweenWorm)
